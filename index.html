@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Responsive Background Video Example</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code&display=swap" rel="stylesheet">
+
+  <style>
+    .bg-video {
+      object-fit: cover; /* Ensures the video covers the entire area */
+    }
+
+    .font-hacker {
+      font-family: 'Cascadia Code', monospace;
+    }
+
+    .transition-effect {
+      transition: all 0.3s ease-in-out;
+    }
+
+    .glow {
+      text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 15px #0f0;
+    }
+
+    /* Ensure body takes up full height */
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+
+    /* Force full-screen height for the main content */
+    .full-height-section {
+      min-height: 100vh;
+    }
+
+    /* Fixing mobile menu issue */
+    #mobile-menu {
+      z-index: 50;
+    }
+  </style>
+</head>
+<body class="full-height-section">
+    
+  <div class="relative w-screen h-screen overflow-hidden">
+    <video autoplay loop muted class="bg-video min-w-full min-h-full w-auto h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <source src="/mywriteup/videos/mylivewallpapers-com-Matrix-EDIT.mp4" type="video/mp4">
+    </video>
+    
+    
+
+    <div class="absolute top-0 left-0 w-full h-full bg-black/50 z-10"></div>
+    
+    <!-- Centered Hero Content -->
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 text-white text-center px-4 sm:px-0">
+      <h1 id="hackerText" class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-4xl font-sans font-hacker transition-effect glow">this is my writeup ctf website :)</h1>
+      <p class="text-2xl sm:text-xl md:text-2xl lg:text-3xl xl:text-2xl pt-8">if u wanna learn something scroll down dummy </p>
+    </div>
+  </div>
+
+  <!-- CTF Writeup Section -->
+  <div class="relative w-screen h-auto overflow-hidden">
+    <video autoplay loop muted class="bg-video min-w-full min-h-full w-auto h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <source src="/mywriteup/videos/mylivewallpapers-com-Matrix-EDIT.mp4" type="video/mp4">
+    </video>
+
+    <div class="absolute top-0 left-0 w-full h-full bg-black/50 z-10"></div>
+
+    <div class="relative z-20 text-white p-8">
+      <h2 class="text-3xl md:text-4xl font-bold glow text-center mb-8 font-hacker">CTF Writeup - LKS 2024</h2>
+
+      <div class="space-y-6 max-w-6xl mx-auto">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold mb-2 glow">Reverse Engineering: gaJelaS</h3>
+          <img src="/mywriteup/videos/image12.png" alt="Code Snippet" class="w-11/12 object-cover rounded-lg mb-4">
+          <img src="/mywriteup/videos/image7.png" alt="Code Snippet" class="w-4/12 object-cover rounded-lg mb-4">
+          <p class="text-gray-300 mb-4">
+            copy seluruh code chall.js yang telah di berikan, lalu lakukan obsfucation pada web https://obf-io.deobfuscate.io/ selanjutnya akan terlihat hex number, convert hex number tersebut dan flag pun ditemukan
+
+            
+          </p>
+          <pre class="bg-gray-900 text-green-400  rounded-md overflow-auto mb-4 ">
+            <code>
+                       Flag : LKS{Obfuscate_javascript}
+
+            </code>
+          </pre>
+          <p class="text-gray-300 mb-4">
+            Arti kata Obfuscation sendiri berarti membingungkan, yang dimaksud membuat sesuatu tidak mudah dimengerti. Ia bukan mengacak tanpa aturan. Ia akan membuat sebuah pesan menjadi sulit dibaca dan mengerti. Tujuannya ketika pesan itu berada di orang yang tidak mengerti cara membacanya maka pesan itu hanyalah pesan sampah.
+            
+          </p>
+          <a href="https://www.codepolitan.com/blog/apa-itu-encoding-obfuscation-hashing-dan-encryption-58bfb7eee3215/" class="text-indigo-400 hover:underline">Learn more about obsfucation</a>
+        </div>
+
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold mb-2 glow">Reverse Engineering: Primitive</h3>
+          <img src="/mywriteup/videos/image11.png" alt="Code Snippet" class="w-5/12 object-cover rounded-lg mb-4">
+          <img src="/mywriteup/videos/image16.png" alt="Code Snippet" class="w-4/12 object-cover rounded-lg mb-4">
+          <p class="text-gray-300 mb-4">
+            pertama, saya mencari defined strings, dengan kata kunci flag, setelah itu saya klik 2x lalu muncul flag di gambar ke 2
+
+          </p>
+          <pre class="bg-gray-900 text-green-400 p-4 rounded-md overflow-auto mb-4">
+            <code>
+            $ curl "http://ctf-site.com/login?username=admin' OR 1=1 --&password=foo"
+            </code>
+          </pre>
+          <a href="#" class="text-indigo-400 hover:underline">Read Full Writeup</a>
+        </div>
+
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold mb-2 glow">Challenge 3: Cross-Site Scripting (XSS)</h3>
+          <img src="https://via.placeholder.com/600x200" alt="Code Snippet" class="w-full h-48 object-cover rounded-lg mb-4">
+          <p class="text-gray-300 mb-4">
+            We discovered a reflected XSS vulnerability on the search page. By injecting a malicious script, we could
+            steal cookies and execute arbitrary JavaScript in the user’s browser.
+          </p>
+          <pre class="bg-gray-900 text-green-400 p-4 rounded-md overflow-auto mb-4">
+            <code>
+            &lt;script&gt;alert('XSS')&lt;/script&gt;
+            </code>
+          </pre>
+          <a href="#" class="text-indigo-400 hover:underline">Read Full Writeup</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Function to generate random characters
+    function getRandomCharacter() {
+      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      return characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+
+    // Function to generate random text (both for page load and hover)
+    function generateHackerText() {
+      const textElement = document.getElementById('hackerText');
+      const originalText = 'Kumpulan write up :)';
+      const originalTextArray = originalText.split('');
+      let iteration = 0;
+      let maxIterations = 10;
+
+      const interval = setInterval(() => {
+        let newText = '';
+        for (let i = 0; i < originalTextArray.length; i++) {
+          if (Math.random() > 0.5) {
+            newText += getRandomCharacter();
+          } else {
+            newText += originalTextArray[i];
+          }
+        }
+        textElement.textContent = newText;
+        iteration++;
+        if (iteration >= maxIterations) {
+          clearInterval(interval);
+          textElement.textContent = originalText;
+        }
+      }, 100);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      generateHackerText();
+    });
+
+    const hackerTextElement = document.getElementById('hackerText');
+    hackerTextElement.addEventListener('mouseenter', generateHackerText);
+  </script>
+</body>
+</html>
